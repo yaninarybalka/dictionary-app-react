@@ -1,2 +1,10 @@
+.Search-engine {
+  border: 2px solid orange;
+  margin: 30px 50px;
 
-
+  background-color: #d8de96;
+}
+.text-wrapp {
+  text-align: center;
+  margin-top: 15px;
+}
