@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./SearchEngine.css";
-import developer from "./developer.jpg";
 
 export default function SearchEngine() {
   let [searchInput, setSearchInput] = useState(null);
