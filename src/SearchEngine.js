@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import "./SearchEngine.css";
+import axios from "axios";
 
 export default function SearchEngine() {
   let [searchInput, setSearchInput] = useState(null);
+  let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchInput}`;
+
+  function handleResponse(response) {
+    console.log(response.data[0]);
+  }
 
   function handleSearch(event) {
     setSearchInput(event.target.value);
   }
+
   function handleSubmit(event) {
     event.preventDefault();
-    alert(searchInput);
+    axios.get(apiUrl).then(handleResponse);
   }
 
   return (
