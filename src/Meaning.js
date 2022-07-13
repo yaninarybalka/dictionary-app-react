@@ -1,17 +1,29 @@
 import React from "react";
+import "./SearchEngine.css";
 
 export default function Meaning(props) {
   return (
     <div>
-      <h4>{props.data.partOfSpeech}</h4>
+      <h3>{props.data.partOfSpeech}</h3>
       {props.data.definitions.map(function (definition, index) {
-        if (index < 3) {
+        if (index < 3 && definition.example) {
           return (
             <div key={index}>
               <p>
                 <strong>Definition: </strong>
                 {definition.definition} <br />
-                {definition.example}
+                <strong>Example: </strong>
+                <span className="example">{definition.example}</span>
+              </p>
+            </div>
+          );
+        }
+        if (index < 3) {
+          return (
+            <div key={index}>
+              <p>
+                <strong>Definition: </strong>
+                {definition.definition}
               </p>
             </div>
           );

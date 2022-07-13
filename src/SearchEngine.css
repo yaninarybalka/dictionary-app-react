@@ -1,15 +1,81 @@
 .Search-engine {
-  border: 2px solid orange;
-  margin: 30px 50px;
+  border: 2px solid orangered;
+  margin: 30px 70px;
+  font-family: "Playfair Display", serif;
+  background-color: #ffdab2;
+}
 
-  background-color: #e1e8a0;
+.search-input {
+  margin-right: 5px;
+  width: 40%;
+}
+
+.submit-btn {
+  background-color: orangered;
+  color: black;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 3px;
+  transition: all 150ms ease-in-out;
+}
+
+.submit-btn:hover {
+  opacity: 0.8;
+}
+
+.example-info {
+  font-size: 15px;
+  font-style: italic;
 }
 .text-wrapp {
   text-align: center;
   margin-top: 15px;
+  padding-bottom: 10px;
 }
 
 .results {
-  border: 2px solid green;
-  margin: 0 50px;
+  margin: 0 70px;
+}
+
+.first-section,
+.second-section {
+  background-color: #ffdab2;
+  border: 2px solid orangered;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-family: "Slabo 27px", serif;
+}
+
+.example {
+  text-decoration: underline;
+}
+
+.synonyms-wrapper {
+  margin-top: 16px;
+}
+.synonym-word {
+  font-size: 23px;
+}
+.synonyms {
+  list-style: disc;
+  margin: 0;
+  padding: 0;
+}
+.synonyms li {
+  display: inline;
+  padding-right: 10px;
+  font-size: 18px;
+}
+.main-word {
+  display: inline;
+  margin-right: 10px;
+  font-size: 28px;
+}
+.phonetics {
+  font-size: 23px;
+}
+
+audio {
+  margin-left: 70px;
+  width: 150px;
 }

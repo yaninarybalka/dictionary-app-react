@@ -25,17 +25,18 @@ export default function SearchEngine() {
     <div className="container">
       <div className="Search-engine">
         <div className="text-wrapp">
-          <h1 className="title"> Dictionary</h1>
-          <h2 className="description"> Choose a word and look it up!</h2>
+          <h1 className="title mb-1"> Dictionary</h1>
+          <h2 className="description mb-3"> Choose a word and look it up!</h2>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Type a word"
               onChange={handleSearch}
+              class="search-input"
             />
-            <input type="submit" value="GO" />
+            <input class="submit-btn" type="submit" value="GO" />
           </form>
-          <h5 className="example">e.g. wine, sea, mermaid, forest</h5>
+          <h5 className="example-info">e.g. wine, sea, mermaid, forest</h5>
         </div>
       </div>
       <div>

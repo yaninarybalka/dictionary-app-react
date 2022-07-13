@@ -1,17 +1,18 @@
 import React from "react";
+import "./SearchEngine.css";
 
 export default function Phonetics(props) {
   console.log(props.data);
   if (props.data[0].audio) {
     return (
-      <div>
+      <span className="phonetics">
         {props.data[0].text}
         <audio controls src={props.data[0].audio}>
           🔊
         </audio>
-      </div>
+      </span>
     );
   } else {
-    return <div>{props.data[0].text}</div>;
+    return <span className="phonetics">{props.data[0].text}</span>;
   }
 }
