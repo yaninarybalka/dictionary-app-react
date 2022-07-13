@@ -7,6 +7,16 @@ export default function SearchEngine() {
   let [searchInput, setSearchInput] = useState(null);
   let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchInput}`;
   let [apiResponse, setApiResponse] = useState(null);
+  let [pexelsResponse, setPexelsResponse] = useState(null);
+
+  function handlePexelsResponse(response) {
+    setPexelsResponse(response.data);
+  }
+
+  const pexelsApiKey = `563492ad6f91700001000001d0dc8590d8bb4f2bbbbf88a428c47090`;
+  const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchInput}&per_page=5`;
+  const headers = { Authorization: `Bearer${pexelsApiKey}` };
+  axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
 
   function handleResponse(response) {
     setApiResponse(response.data[0]);
@@ -25,7 +35,7 @@ export default function SearchEngine() {
     <div className="container">
       <div className="Search-engine">
         <div className="text-wrapp">
-          <h1 className="title mb-1"> Dictionary</h1>
+          <h1 className="title mb-1"> Your little dictionary</h1>
           <h2 className="description mb-3"> Choose a word and look it up!</h2>
           <form onSubmit={handleSubmit}>
             <input
@@ -41,7 +51,7 @@ export default function SearchEngine() {
       </div>
       <div>
         {" "}
-        <Result data={apiResponse} />
+        <Result data={apiResponse} pexelsResponse={pexelsResponse} />
       </div>
     </div>
   );

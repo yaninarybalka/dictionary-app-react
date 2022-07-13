@@ -6,7 +6,7 @@ export default function Meaning(props) {
     <div>
       <h3>{props.data.partOfSpeech}</h3>
       {props.data.definitions.map(function (definition, index) {
-        if (index < 3 && definition.example) {
+        if (index < 4 && definition.example) {
           return (
             <div key={index}>
               <p>
@@ -18,7 +18,7 @@ export default function Meaning(props) {
             </div>
           );
         }
-        if (index < 3) {
+        if (index < 4) {
           return (
             <div key={index}>
               <p>

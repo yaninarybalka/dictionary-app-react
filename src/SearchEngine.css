@@ -79,3 +79,7 @@ audio {
   margin-left: 70px;
   width: 150px;
 }
+
+.example-img {
+  border-radius: 3px;
+}

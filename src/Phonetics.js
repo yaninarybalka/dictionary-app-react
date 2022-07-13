@@ -2,7 +2,6 @@ import React from "react";
 import "./SearchEngine.css";
 
 export default function Phonetics(props) {
-  console.log(props.data);
   if (props.data[0].audio) {
     return (
       <span className="phonetics">
