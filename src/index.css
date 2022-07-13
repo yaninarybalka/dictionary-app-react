@@ -2,3 +2,13 @@ body {
   background-image: url(BookLover.svg);
   font-family: "Playfair Display", serif;
 }
+
+footer a {
+  color: orangered;
+  transition: all 150ms ease-in-out;
+}
+
+footer a:hover {
+  opacity: 0.8;
+  color: orangered;
+}
