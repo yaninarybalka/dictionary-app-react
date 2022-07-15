@@ -8,17 +8,12 @@ export default function SearchEngine() {
   let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchInput}`;
   let [apiResponse, setApiResponse] = useState(null);
   let [pexelsResponse, setPexelsResponse] = useState(null);
+  const pexelsApiKey = `563492ad6f91700001000001d0dc8590d8bb4f2bbbbf88a428c47090`;
+  const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchInput}&per_page=5`;
 
   function handlePexelsResponse(response) {
     setPexelsResponse(response.data);
   }
-
-  const pexelsApiKey = `563492ad6f91700001000001d0dc8590d8bb4f2bbbbf88a428c47090`;
-  const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchInput}&per_page=5`;
-
-  axios
-    .get(pexelsApiUrl, { headers: { Authorization: `Bearer${pexelsApiKey}` } })
-    .then(handlePexelsResponse);
 
   function handleResponse(response) {
     setApiResponse(response.data[0]);
@@ -31,6 +26,11 @@ export default function SearchEngine() {
   function handleSubmit(event) {
     event.preventDefault();
     axios.get(apiUrl).then(handleResponse);
+    axios
+      .get(pexelsApiUrl, {
+        headers: { Authorization: `Bearer${pexelsApiKey}` },
+      })
+      .then(handlePexelsResponse);
   }
 
   return (
@@ -53,7 +53,7 @@ export default function SearchEngine() {
       </div>
       <div>
         {" "}
-        <Result data={apiResponse} pexelsResponse={pexelsResponse} />
+        <Result data={apiResponse} photos={pexelsResponse} />
       </div>
     </div>
   );
