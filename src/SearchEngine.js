@@ -15,8 +15,10 @@ export default function SearchEngine() {
 
   const pexelsApiKey = `563492ad6f91700001000001d0dc8590d8bb4f2bbbbf88a428c47090`;
   const pexelsApiUrl = `https://api.pexels.com/v1/search?query=${searchInput}&per_page=5`;
-  const headers = { Authorization: `Bearer${pexelsApiKey}` };
-  axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
+
+  axios
+    .get(pexelsApiUrl, { headers: { Authorization: `Bearer${pexelsApiKey}` } })
+    .then(handlePexelsResponse);
 
   function handleResponse(response) {
     setApiResponse(response.data[0]);

@@ -10,7 +10,7 @@ export default function Photos(props) {
               <a href={photo.src.original} target="_blank" rel="noreferrer">
                 <img
                   src={photo.src.tiny}
-                  className="img-fluid example-img"
+                  className="img-fluid example-img mb-2"
                   alt=""
                 ></img>
               </a>
