@@ -28,7 +28,7 @@ export default function SearchEngine() {
     axios.get(apiUrl).then(handleResponse);
     axios
       .get(pexelsApiUrl, {
-        headers: { Authorization: `Bearer${pexelsApiKey}` },
+        headers: { Authorization: `Bearer ${pexelsApiKey}` },
       })
       .then(handlePexelsResponse);
   }
